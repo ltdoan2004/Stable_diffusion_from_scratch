@@ -19,7 +19,7 @@ class VAE_encoder(nn.Sequential):
         VAE_ResidualBlock(512, 512),
         VAE_ResidualBlock(512, 512),
 
-        VAE_AttentionBlock(512, 512),
+        VAE_AttentionBlock(512),
         VAE_ResidualBlock(512, 512),
         nn.GroupNorm(32, 512),
         nn.Silu(),
