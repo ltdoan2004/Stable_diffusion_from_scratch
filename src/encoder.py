@@ -12,7 +12,7 @@ class VAE_encoder(nn.Sequential):
 
         nn.Conv2d(3, 128, kernel_size =3, stride = 2, padding =0),
         VAE_ResidualBlock(128, 256),
-        VAE_ResidualBlock(256, 256)
+        VAE_ResidualBlock(256, 256),
     
         nn.Conv2d(3, 128, kernel_size =3, stride = 2, padding = 0),
         VAE_ResidualBlock(256, 512),
