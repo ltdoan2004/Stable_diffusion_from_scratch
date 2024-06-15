@@ -32,7 +32,7 @@ class VAE_encoder(nn.Sequential):
                 if getattr(module, 'stride', None) == (2, 2):
                     x = F.pad(x, (0,1,0,1))
                 x = module(x)
-            #device tensor x of shape(bs, 8, height, width) -> two tensor of shape (bs, 4, height, width)
+            #devide tensor x of shape(bs, 8, height, width) -> two tensor of shape (bs, 4, height, width)
             mean, log_varience = torch.chunk(x, 2, dim=1)
 
             log_varience = torch.clamp(log_varience, min = -20, max =30)
